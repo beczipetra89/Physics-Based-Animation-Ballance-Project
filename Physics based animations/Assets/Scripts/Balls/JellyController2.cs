@@ -1,10 +1,8 @@
-﻿// JELLY BALL: has soft body, deformable, springy and gluy
-
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JellyBallController : MonoBehaviour
+public class JellyController2 : MonoBehaviour
 {
     public Rigidbody body;
     public FauxGravity gravitypull;
@@ -20,7 +18,7 @@ public class JellyBallController : MonoBehaviour
     public bool isJumping = false;
     public bool isGrounded = true;
 
-
+ 
     // Start is called before the first frame update
     void Start()
     {

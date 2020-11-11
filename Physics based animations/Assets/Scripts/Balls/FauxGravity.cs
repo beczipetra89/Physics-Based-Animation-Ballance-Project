@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class FauxGravity : MonoBehaviour
 {
-    public float gravity = -10f;
+    public float gravity = -50f; //-10f
 
     public void Attract(Transform body)
     {

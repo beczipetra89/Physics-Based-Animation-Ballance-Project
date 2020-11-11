@@ -8,6 +8,7 @@ TagManager:
   - FanBezierCurve
   - Wall
   - Ceiling
+  - FauxGravity
   layers:
   - Default
   - TransparentFX
