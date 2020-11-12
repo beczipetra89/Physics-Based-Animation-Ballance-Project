@@ -5,16 +5,14 @@ using System;
 
 public class PaperBallController : MonoBehaviour
 {
-
     public Rigidbody body;
     public bool isGrounded = true;
     public float speed;
     public float jumpForce;
     public bool isHeated = false;
-    float baseIntensity = 0f;
-    float targetIntensity = 10f;
-
+    
     public Material mat;
+    public GameObject fire;
 
     private void start()
     {
@@ -51,12 +49,14 @@ public class PaperBallController : MonoBehaviour
         {
             mat.EnableKeyword("_EMISSION");
             mat.SetColor("_Color", Color.white);
+            fire.SetActive(false);
         }
 
         if (isHeated)
         {
             mat.SetColor("_Color", Color.black);
-            mat.DisableKeyword("_EMISSION"); 
+            mat.DisableKeyword("_EMISSION");
+            fire.SetActive(true);
         }
 
     }
@@ -83,12 +83,18 @@ public class PaperBallController : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        isHeated = true;
+        if (other.gameObject.tag == "Hot")
+        {
+            isHeated = true;
+        }
     }
 
     void OnTriggerExit(Collider other)
     {
-        isHeated = false;
-    }
+        if (other.gameObject.tag == "Hot")
+        {
+            isHeated = false;
+        }
 
+    }
 }

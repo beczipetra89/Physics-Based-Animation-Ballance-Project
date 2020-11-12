@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class JellyBallController : MonoBehaviour
 {
+
     public Rigidbody body;
     public FauxGravity gravitypull;
     private Transform myTransform;
@@ -19,6 +20,7 @@ public class JellyBallController : MonoBehaviour
     public bool inFauxGravity = false;
     public bool isJumping = false;
     public bool isGrounded = true;
+    public bool isHeated = false;
 
 
     // Start is called before the first frame update
@@ -31,7 +33,7 @@ public class JellyBallController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
+        
         ////////////////// MOVE ON THE GROUND NORMALLY ////////////////////
         if (!inFauxGravity)
         {
@@ -79,6 +81,17 @@ public class JellyBallController : MonoBehaviour
             }
 
         }
+
+
+        if (!isHeated)
+        {
+          //
+        }
+
+        if (isHeated)
+        {
+          //
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -101,5 +114,26 @@ public class JellyBallController : MonoBehaviour
             GetComponent<Rigidbody>().useGravity = true;
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Hot")
+        {
+            isHeated = true;
+         
+        }
+
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        isHeated = true;
+  
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        isHeated = false;
     }
 }

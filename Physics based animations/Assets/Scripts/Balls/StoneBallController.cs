@@ -87,11 +87,17 @@ public class StoneBallController : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        isHeated = true;
+        if (other.gameObject.tag == "Hot")
+        {
+            isHeated = true;
+        }
     }
 
     void OnTriggerExit(Collider other)
     {
-        isHeated = false;
+        if (other.gameObject.tag == "Hot")
+        {
+            isHeated = false;
+        }
     }
 }

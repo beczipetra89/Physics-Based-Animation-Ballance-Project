@@ -10,10 +10,17 @@ public class WoodBallController : MonoBehaviour
     public float woodBallSpeed;
     public float jumpForce;
     public bool isGrounded = true;
+    public bool isHeated = false;
+  
+    public Material mat;
+    public GameObject fire;
 
     private void start()
     {
         body = GetComponent<Rigidbody>();
+
+        Renderer renderer = GetComponent<Renderer>();
+        mat = renderer.material;
     }
     // Update is called once per frame
     void Update()
@@ -37,6 +44,20 @@ public class WoodBallController : MonoBehaviour
         {
             Physics.gravity = new Vector3(0, -50.0F, 0);
         }
+
+        if (!isHeated)
+        {
+            mat.EnableKeyword("_EMISSION");
+            mat.SetColor("_Color", Color.grey);
+            fire.SetActive(false);
+        }
+
+        if (isHeated)
+        {
+            mat.SetColor("_Color", Color.black);
+            mat.DisableKeyword("_EMISSION");
+            fire.SetActive(true);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -44,6 +65,31 @@ public class WoodBallController : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             isGrounded = true;
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Hot")
+        {
+            isHeated = true;
+        }
+
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Hot")
+        {
+            isHeated = true;
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Hot")
+        {
+            isHeated = false;
         }
     }
 }
