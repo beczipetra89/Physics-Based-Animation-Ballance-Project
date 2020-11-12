@@ -1,4 +1,4 @@
-﻿// JELLY BALL: has soft body, deformable, springy and gluy
+﻿// JELLY BALL: has soft body, deformable, springy and gluey (attracted by the Gravity Island)
 
 using System.Collections;
 using System.Collections.Generic;
@@ -83,7 +83,7 @@ public class JellyBallController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "FauxGravity")
+        if (collision.gameObject.tag == "GravityIsland")
         {
             isGrounded = false;
             inFauxGravity = true;

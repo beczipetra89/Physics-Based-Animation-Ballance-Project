@@ -1,4 +1,4 @@
-﻿// PAPER BALL: lightweight, controllable meanwhile in air
+﻿// PAPER BALL: lightweight, controllable meanwhile in air, gets on fire (particle system )when heated up
 
 using UnityEngine;
 using System;
@@ -10,10 +10,18 @@ public class PaperBallController : MonoBehaviour
     public bool isGrounded = true;
     public float speed;
     public float jumpForce;
+    public bool isHeated = false;
+    float baseIntensity = 0f;
+    float targetIntensity = 10f;
+
+    public Material mat;
 
     private void start()
     {
         body = GetComponent<Rigidbody>();
+
+        Renderer renderer = GetComponent<Renderer>();
+        mat = renderer.material;
     }
 
     void FixedUpdate()
@@ -37,7 +45,23 @@ public class PaperBallController : MonoBehaviour
         {
             Physics.gravity = new Vector3(0, -20.0F, 0);
         }
+
+
+        if (!isHeated)
+        {
+            mat.EnableKeyword("_EMISSION");
+            mat.SetColor("_Color", Color.white);
+        }
+
+        if (isHeated)
+        {
+            mat.SetColor("_Color", Color.black);
+            mat.DisableKeyword("_EMISSION"); 
+        }
+
     }
+
+
 
 
     private void OnCollisionEnter(Collision collision)
@@ -46,6 +70,25 @@ public class PaperBallController : MonoBehaviour
         {
             isGrounded = true;
         }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Hot")
+        {
+            isHeated = true;
+        }
+
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        isHeated = true;
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        isHeated = false;
     }
 
 }

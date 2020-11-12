@@ -10380,7 +10380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Intensity: 2
-  Mass: 1
+  Mass: 5
   stiffness: 1
   damping: 0.75
 --- !u!114 &381308322
@@ -11037,7 +11037,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 790559517}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.1338, y: 8.1, z: -8.75}
+  m_LocalPosition: {x: -3.2, y: 4.3, z: -8.75}
   m_LocalScale: {x: 1.7271, y: 1.7271, z: 1.7271}
   m_Children: []
   m_Father: {fileID: 0}
@@ -11057,8 +11057,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 790559518}
   stoneBallSpeed: 250
-  jumpForce: 400
+  jumpForce: 500
   isGrounded: 1
+  isHeated: 0
+  mat: {fileID: 2100000, guid: 136cba0750b063c4ba62705ff83f2bae, type: 2}
 --- !u!1 &880192538
 GameObject:
   m_ObjectHideFlags: 0
@@ -12108,8 +12110,8 @@ MonoBehaviour:
   balls:
   - {fileID: 381308319}
   - {fileID: 2079237091}
-  - {fileID: 1089502922}
   - {fileID: 790559517}
+  - {fileID: 381308319}
 --- !u!4 &1472278693
 Transform:
   m_ObjectHideFlags: 0
@@ -12124,6 +12126,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1472888687
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1472888688}
+  - component: {fileID: 1472888689}
+  m_Layer: 0
+  m_Name: HotArea
+  m_TagString: Hot
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1472888688
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472888687}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.33, y: 2.13, z: -5.62}
+  m_LocalScale: {x: 3.59, y: 3.59, z: 3.59}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1472888689
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472888687}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1511982898
 GameObject:
   m_ObjectHideFlags: 0
@@ -12479,7 +12525,7 @@ GameObject:
   - component: {fileID: 1885619654}
   m_Layer: 0
   m_Name: GravityIsland
-  m_TagString: FauxGravity
+  m_TagString: GravityIsland
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12554,7 +12600,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1885619649}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.4, y: 2.66, z: -5.7}
+  m_LocalPosition: {x: -14.13, y: 3.5, z: -15.6}
   m_LocalScale: {x: 5.9048, y: 5.9048, z: 5.9048}
   m_Children: []
   m_Father: {fileID: 0}
@@ -13712,6 +13758,8 @@ MonoBehaviour:
   isGrounded: 1
   speed: 20
   jumpForce: 10
+  isHeated: 0
+  mat: {fileID: 2100000, guid: e99fd39833ea44a498b1b29fd42e4d4e, type: 2}
 --- !u!4 &543450652398995744
 Transform:
   m_ObjectHideFlags: 0

@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿//STONE BALL: heavy weight, can push heavy objects and glows (material emission and color)red when gets heated up
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,14 +11,27 @@ public class StoneBallController : MonoBehaviour
     public float stoneBallSpeed;
     public float jumpForce;
     public bool isGrounded = true;
+    public bool isHeated = false;
+    float baseIntensity = -10f;
+    float targetIntensity = 10f;
+
+    public Material mat; 
+    
+
 
     private void start()
     {
        body = GetComponent<Rigidbody>();
+       
+        Renderer renderer = GetComponent<Renderer>();
+        mat = renderer.material; 
+
+
     }
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+
         float moveHorizontal = Input.GetAxis("Horizontal") * Time.deltaTime * stoneBallSpeed;
         float moveVertical = Input.GetAxis("Vertical") * Time.deltaTime * stoneBallSpeed;
 
@@ -37,6 +52,19 @@ public class StoneBallController : MonoBehaviour
             Physics.gravity = new Vector3(0, -50.0F, 0);
         }
 
+        // Change emission color - intensity when it gets hot
+
+        if (!isHeated)
+        {
+            mat.DisableKeyword("_EMISSION");
+            mat.SetColor("_EmissionColor", Color.black * baseIntensity);
+        }
+
+        if (isHeated)
+        {
+            mat.EnableKeyword("_EMISSION");
+            mat.SetColor("_EmissionColor", Color.red * targetIntensity);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -45,5 +73,25 @@ public class StoneBallController : MonoBehaviour
         {
             isGrounded = true;
         }
+
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Hot")
+        {
+            isHeated = true;
+        }
+      
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        isHeated = true;
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        isHeated = false;
     }
 }
