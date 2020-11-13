@@ -11,6 +11,7 @@ TagManager:
   - FauxGravity
   - GravityIsland
   - Hot
+  - DeathZone
   layers:
   - Default
   - TransparentFX
