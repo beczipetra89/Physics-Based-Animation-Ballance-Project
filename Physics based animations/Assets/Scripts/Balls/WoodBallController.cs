@@ -15,6 +15,8 @@ public class WoodBallController : MonoBehaviour
     public Material mat;
     public GameObject fire;
 
+    public HealthManager healthManager;
+
     private void start()
     {
         body = GetComponent<Rigidbody>();
@@ -73,6 +75,11 @@ public class WoodBallController : MonoBehaviour
         if (other.gameObject.tag == "Hot")
         {
             isHeated = true;
+        }
+
+        if (other.gameObject.tag == "DeathZone")
+        {
+            healthManager.health -= 1;
         }
 
     }

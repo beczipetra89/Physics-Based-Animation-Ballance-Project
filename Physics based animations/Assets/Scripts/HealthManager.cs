@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HealthManager : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class HealthManager : MonoBehaviour
     public Sprite fullBall;
     public Sprite emptyBall;
 
-    
+
     void Update()
     {
         if (health > numberOfLifeIcons)
@@ -20,8 +21,13 @@ public class HealthManager : MonoBehaviour
             health = numberOfLifeIcons;
         }
 
+        if (health < 0)
+        {
+            Die();
+        }
 
-        for (int i = 0; i < ballIcons.Length; i++)
+
+            for (int i = 0; i < ballIcons.Length; i++)
         {
             if (i < health)
             {
@@ -41,6 +47,11 @@ public class HealthManager : MonoBehaviour
                 ballIcons[i].enabled = false;
             }
         }
+    }
+
+    public void Die()
+    {
+        SceneManager.LoadScene("Start scene");
     }
 
 }

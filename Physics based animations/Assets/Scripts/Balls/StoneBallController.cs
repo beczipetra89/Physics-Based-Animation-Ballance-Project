@@ -15,8 +15,10 @@ public class StoneBallController : MonoBehaviour
     float baseIntensity = -10f;
     float targetIntensity = 10f;
 
-    public Material mat; 
-    
+    public Material mat;
+    public HealthManager healthManager;
+
+
 
 
     private void start()
@@ -82,7 +84,12 @@ public class StoneBallController : MonoBehaviour
         {
             isHeated = true;
         }
-      
+
+        if (other.gameObject.tag == "DeathZone")
+        {
+            healthManager.health -= 1;
+        }
+
     }
 
     void OnTriggerStay(Collider other)

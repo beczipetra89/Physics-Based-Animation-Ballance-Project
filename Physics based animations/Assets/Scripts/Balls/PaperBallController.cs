@@ -73,10 +73,6 @@ public class PaperBallController : MonoBehaviour
             isGrounded = true;
         }
 
-        if (collision.gameObject.tag == "DeathZone")
-        {
-           healthManager.health -= 1;
-        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -84,6 +80,11 @@ public class PaperBallController : MonoBehaviour
         if (other.gameObject.tag == "Hot")
         {
             isHeated = true;
+        }
+
+        if (other.gameObject.tag == "DeathZone")
+        {
+            healthManager.health -= 1;
         }
 
     }
