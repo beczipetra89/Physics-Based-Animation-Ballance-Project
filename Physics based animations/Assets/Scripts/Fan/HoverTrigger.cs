@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class HoverTrigger : MonoBehaviour
 {
-    public float windForce = 1000f;
+    public float windForce = 100f; //1000f
    
 
     void OnTriggerEnter(Collider other)

@@ -14,6 +14,8 @@ public class PaperBallController : MonoBehaviour
     public Material mat;
     public GameObject fire;
 
+    public HealthManager healthManager;
+
     private void start()
     {
         body = GetComponent<Rigidbody>();
@@ -69,6 +71,11 @@ public class PaperBallController : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             isGrounded = true;
+        }
+
+        if (collision.gameObject.tag == "DeathZone")
+        {
+           healthManager.health -= 1;
         }
     }
 
