@@ -14,7 +14,7 @@ public class PaperBallController : MonoBehaviour
     public Material mat;
     public GameObject fire;
 
-    public HealthManager healthManager;
+    public GameManager gameManager;
 
     private void start()
     {
@@ -43,7 +43,7 @@ public class PaperBallController : MonoBehaviour
 
         if (!isGrounded)
         {
-            Physics.gravity = new Vector3(0, -20.0F, 0);
+            Physics.gravity = new Vector3(0, -40.0F, 0);
         }
 
 
@@ -64,8 +64,6 @@ public class PaperBallController : MonoBehaviour
     }
 
 
-
-
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Ground")
@@ -84,7 +82,7 @@ public class PaperBallController : MonoBehaviour
 
         if (other.gameObject.tag == "DeathZone")
         {
-            healthManager.health -= 1;
+            gameManager.health -= 1;
         }
 
     }

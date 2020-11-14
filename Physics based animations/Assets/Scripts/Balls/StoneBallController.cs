@@ -16,10 +16,7 @@ public class StoneBallController : MonoBehaviour
     float targetIntensity = 10f;
 
     public Material mat;
-    public HealthManager healthManager;
-
-
-
+    public GameManager gameManager;
 
     private void start()
     {
@@ -87,7 +84,7 @@ public class StoneBallController : MonoBehaviour
 
         if (other.gameObject.tag == "DeathZone")
         {
-            healthManager.health -= 1;
+            gameManager.health -= 1;
         }
 
     }

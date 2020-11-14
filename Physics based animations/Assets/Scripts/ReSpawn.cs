@@ -8,11 +8,11 @@ public class ReSpawn : MonoBehaviour
 {
     //[SerializeField] private Transform respawnPoint;
     
-    [SerializeField] private Transform respawnPoint;
+    [SerializeField] public Transform respawnPoint;
 
-   void OnTriggerEnter(Collider player)
+   void OnTriggerEnter(Collider other)
     {
         //player.transform.position = respawnPoint.transform.position;
-        player.transform.position = respawnPoint.transform.position;
+        other.transform.position = respawnPoint.transform.position;
     }
 }

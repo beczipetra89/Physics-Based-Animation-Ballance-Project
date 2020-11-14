@@ -22,7 +22,7 @@ public class JellyBallController : MonoBehaviour
     public bool isGrounded = true;
     public bool isHeated = false;
 
-    public HealthManager healthManager;
+    public GameManager gameManager;
 
 
     // Start is called before the first frame update
@@ -128,7 +128,7 @@ public class JellyBallController : MonoBehaviour
 
         if (other.gameObject.tag == "DeathZone")
         {
-            healthManager.health -= 1;
+            gameManager.health -= 1;
         }
 
     }

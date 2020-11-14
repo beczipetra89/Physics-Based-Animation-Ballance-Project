@@ -11,11 +11,11 @@ public class WoodBallController : MonoBehaviour
     public float jumpForce;
     public bool isGrounded = true;
     public bool isHeated = false;
-  
+    
     public Material mat;
     public GameObject fire;
 
-    public HealthManager healthManager;
+    public GameManager gameManager;
 
     private void start()
     {
@@ -79,7 +79,7 @@ public class WoodBallController : MonoBehaviour
 
         if (other.gameObject.tag == "DeathZone")
         {
-            healthManager.health -= 1;
+            gameManager.health -= 1;
         }
 
     }
