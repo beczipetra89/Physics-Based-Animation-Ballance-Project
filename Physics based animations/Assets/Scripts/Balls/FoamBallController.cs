@@ -3,7 +3,7 @@
 using UnityEngine;
 using System;
 
-public class FoamBallController : MonoBehaviour
+public class PaperBallController : MonoBehaviour
 {
     public Rigidbody body;
     public bool isGrounded = true;
