@@ -16,6 +16,7 @@ public class PaperBallController : MonoBehaviour
 
     public GameManager gameManager;
 
+
     private void start()
     {
         body = GetComponent<Rigidbody>();
@@ -26,6 +27,7 @@ public class PaperBallController : MonoBehaviour
 
     void FixedUpdate()
     {
+       
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
