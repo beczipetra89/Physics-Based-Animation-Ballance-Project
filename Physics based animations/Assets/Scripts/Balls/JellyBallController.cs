@@ -20,7 +20,7 @@ public class JellyBallController : MonoBehaviour
     public bool inFauxGravity = false;
     public bool isJumping = false;
     public bool isGrounded = true;
-    public bool isHeated = false;
+  
 
     public GameManager gameManager;
 
@@ -83,17 +83,7 @@ public class JellyBallController : MonoBehaviour
             }
 
         }
-
-
-        if (!isHeated)
-        {
-          //
-        }
-
-        if (isHeated)
-        {
-          //
-        }
+        
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -120,27 +110,11 @@ public class JellyBallController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Hot")
-        {
-            isHeated = true;
-         
-        }
-
+     
         if (other.gameObject.tag == "DeathZone")
         {
             gameManager.health -= 1;
         }
 
-    }
-
-    void OnTriggerStay(Collider other)
-    {
-        isHeated = true;
-  
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        isHeated = false;
     }
 }

@@ -11,7 +11,6 @@ public class PaperBallController : MonoBehaviour
     public float jumpForce;
     public bool isHeated = false;
     
-    public Material mat;
     public GameObject fire;
 
     public GameManager gameManager;
@@ -20,9 +19,6 @@ public class PaperBallController : MonoBehaviour
     private void start()
     {
         body = GetComponent<Rigidbody>();
-
-        Renderer renderer = GetComponent<Renderer>();
-        mat = renderer.material;
     }
 
     void FixedUpdate()
@@ -51,15 +47,12 @@ public class PaperBallController : MonoBehaviour
 
         if (!isHeated)
         {
-            mat.EnableKeyword("_EMISSION");
-            mat.SetColor("_Color", Color.white);
             fire.SetActive(false);
         }
 
         if (isHeated)
         {
-            mat.SetColor("_Color", Color.black);
-            mat.DisableKeyword("_EMISSION");
+            gameManager.health -= 1;
             fire.SetActive(true);
         }
 
@@ -77,15 +70,16 @@ public class PaperBallController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Hot")
-        {
-            isHeated = true;
-        }
-
-        if (other.gameObject.tag == "DeathZone")
+   
+        if (other.gameObject.tag == "DeathZone" )
         {
             gameManager.health -= 1;
         }
+
+        if (other.gameObject.tag == "Hot")
+            isHeated = true;
+
+
 
     }
 
@@ -93,8 +87,10 @@ public class PaperBallController : MonoBehaviour
     {
         if (other.gameObject.tag == "Hot")
         {
-            isHeated = true;
+            gameManager.health --;
+
         }
+
     }
 
     void OnTriggerExit(Collider other)
