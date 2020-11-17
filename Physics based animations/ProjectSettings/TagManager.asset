@@ -13,6 +13,7 @@ TagManager:
   - Hot
   - DeathZone
   - NoSelfCollision
+  - End
   layers:
   - Default
   - TransparentFX
