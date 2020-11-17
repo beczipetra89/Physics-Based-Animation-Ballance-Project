@@ -20,7 +20,7 @@ public class JellyBallController : MonoBehaviour
     public bool inFauxGravity = false;
     public bool isJumping = false;
     public bool isGrounded = true;
-  
+    
 
     public GameManager gameManager;
 
@@ -114,6 +114,11 @@ public class JellyBallController : MonoBehaviour
         if (other.gameObject.tag == "DeathZone")
         {
             gameManager.health -= 1;
+        }
+
+        if (other.gameObject.tag == "Hot")
+        {
+           gameManager.health -= 1;
         }
 
     }

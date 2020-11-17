@@ -2,8 +2,9 @@
 
 using UnityEngine;
 using System;
+using System.Collections;
 
-public class PaperBallController : MonoBehaviour
+public class FoamBallController : MonoBehaviour
 {
     public Rigidbody body;
     public bool isGrounded = true;
@@ -11,8 +12,7 @@ public class PaperBallController : MonoBehaviour
     public float jumpForce;
     public bool isHeated = false;
     
-    public GameObject fire;
-
+    public GameObject fire; // fire particle system
     public GameManager gameManager;
 
 
@@ -52,7 +52,6 @@ public class PaperBallController : MonoBehaviour
 
         if (isHeated)
         {
-            gameManager.health -= 1;
             fire.SetActive(true);
         }
 
@@ -77,21 +76,14 @@ public class PaperBallController : MonoBehaviour
         }
 
         if (other.gameObject.tag == "Hot")
-            isHeated = true;
-
-
-
-    }
-
-    void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.tag == "Hot")
         {
-            gameManager.health --;
-
+            isHeated = true;
+            StartCoroutine(Delay());
+            gameManager.health -= 1;
         }
 
     }
+
 
     void OnTriggerExit(Collider other)
     {
@@ -101,4 +93,11 @@ public class PaperBallController : MonoBehaviour
         }
 
     }
+
+    IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(5);
+    }
+
+
 }

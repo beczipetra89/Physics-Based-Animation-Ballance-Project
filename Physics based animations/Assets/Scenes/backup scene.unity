@@ -40760,8 +40760,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1.6449459, z: 1}
+  m_Center: {x: 0, y: 0.32247233, z: 0}
 --- !u!114 &1472888690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41589,7 +41589,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1611369722}
   m_LocalRotation: {x: 0.32606664, y: -0, z: -0, w: 0.94534683}
-  m_LocalPosition: {x: -26.92, y: -24.27, z: -0.39}
+  m_LocalPosition: {x: -26.92, y: -14, z: 15.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 129185815}
@@ -47686,7 +47686,7 @@ GameObject:
   - component: {fileID: 2079237093}
   - component: {fileID: 2079237092}
   - component: {fileID: 2079237097}
-  - component: {fileID: 2079237098}
+  - component: {fileID: 2079237096}
   m_Layer: 0
   m_Name: FoamBall
   m_TagString: Player
@@ -47764,30 +47764,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2079237091}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -26.92, y: -31.099998, z: 4.769986}
+  m_LocalPosition: {x: -26.92, y: -20.83, z: 20.459988}
   m_LocalScale: {x: 1.7271, y: 1.7271, z: 1.7271}
   m_Children:
   - {fileID: 4521404830393106}
   m_Father: {fileID: 129185815}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &2079237097
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2079237091}
-  serializedVersion: 2
-  m_Mass: 0.1
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &2079237098
+--- !u!114 &2079237096
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -47804,9 +47788,24 @@ MonoBehaviour:
   speed: 2
   jumpForce: 1.5
   isHeated: 0
-  mat: {fileID: 2100000, guid: 791605263cb0ce5449eea6f5bfff9251, type: 2}
   fire: {fileID: 1253142430600248}
   gameManager: {fileID: 1067661081}
+--- !u!54 &2079237097
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079237091}
+  serializedVersion: 2
+  m_Mass: 0.1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2125469142
 GameObject:
   m_ObjectHideFlags: 0
