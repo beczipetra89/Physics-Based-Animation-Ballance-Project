@@ -12,6 +12,7 @@ TagManager:
   - GravityIsland
   - Hot
   - DeathZone
+  - NoSelfCollision
   layers:
   - Default
   - TransparentFX
