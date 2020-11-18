@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public Sprite emptyBall;
 
     [Header("Timer")]
-    private float timeRemaining = 120;
+    public float timeRemaining = 120;
     public bool timerIsRunning = false;
     public Text timerText;
 
