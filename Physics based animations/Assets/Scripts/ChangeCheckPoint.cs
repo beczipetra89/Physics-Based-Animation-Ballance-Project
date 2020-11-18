@@ -8,11 +8,13 @@ using UnityEngine;
 public class ChangeCheckPoint : MonoBehaviour
 {
     public GameObject destroyPreviousZone;
+    public GameObject deactivatedPreviousArea;
 
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
             Destroy(destroyPreviousZone);
-        Destroy(gameObject);
+            Destroy(gameObject);
+        deactivatedPreviousArea.SetActive(false);
     }
 }
