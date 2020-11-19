@@ -9,16 +9,12 @@ public class ReachEnd : MonoBehaviour
     public GameObject particles;
     public bool isAtTheEnd = false; 
 
-    void Start()
-    {
-        particles.SetActive(true);
-    }
-
+ 
     void Update()
     {
         if (isAtTheEnd)
         {
-            particles.SetActive(false);
+            particles.SetActive(true);
             StartCoroutine(LoadEndScene());
         }
     }

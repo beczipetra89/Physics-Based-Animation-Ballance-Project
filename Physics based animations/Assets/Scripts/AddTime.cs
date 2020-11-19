@@ -7,9 +7,9 @@ public class AddTime : MonoBehaviour
     public GameObject destroy_this;
     public GameManager gameManager;
    
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider col)
     {
-        if (collision.gameObject.tag == "Player")
+        if (col.gameObject.tag == "Player")
         {
             gameManager.timeRemaining += 30;
             Destroy(destroy_this);
