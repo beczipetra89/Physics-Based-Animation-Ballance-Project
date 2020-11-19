@@ -6,37 +6,29 @@ using UnityEngine;
 
 public class JellyBallController : MonoBehaviour
 {
-
     public Rigidbody body;
     public FauxGravity gravitypull;
     private Transform myTransform;
-
     private Vector3 moveDirection;
 
     public float jellyBallSpeed;
     public float jumpForce;
     public float moveSpeed = 15f;
-
     public bool inFauxGravity = false;
     public bool isJumping = false;
     public bool isGrounded = true;
-    
 
     public GameManager gameManager;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody>();
         inFauxGravity = false;
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        
-        ////////////////// MOVE ON THE GROUND NORMALLY ////////////////////
+     void FixedUpdate()
+     {
+    ////////////////// MOVE ON THE GROUND NORMALLY ////////////////////
         if (!inFauxGravity)
         {
             float moveHorizontal = Input.GetAxis("Horizontal") * Time.deltaTime * jellyBallSpeed;
@@ -62,32 +54,30 @@ public class JellyBallController : MonoBehaviour
         }
 
 
-        ////////////////// MOVE WHILE STICKED TO THE GRAVITY ISLAND (ball with gravity pull) ////////////////////
+            ////////////////// MOVE WHILE STICKED TO THE GRAVITY ISLAND (ball with gravity pull) ////////////////////
 
-        if (inFauxGravity)
-        {
-
-            gravitypull.Attract(myTransform);
-
-            // set the move direction in a new vector
-            moveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
-            // use local space instead of world space to the rigidbody can follow the curve
-            GetComponent<Rigidbody>().MovePosition(GetComponent<Rigidbody>().position + transform.TransformDirection(moveDirection) * moveSpeed * Time.deltaTime);
-
-            if (Input.GetButtonDown("Jump"))
+            if (inFauxGravity)
             {
-                body.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse); // Insatnt force impulse to the gameobjects ridiidboy using its mass
-                isJumping = true;
-                inFauxGravity = false;
-                GetComponent<Rigidbody>().useGravity = true;
+
+                gravitypull.Attract(myTransform);
+
+                // set the move direction in a new vector
+                moveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
+                // use local space instead of world space to the rigidbody can follow the curve
+                GetComponent<Rigidbody>().MovePosition(GetComponent<Rigidbody>().position + transform.TransformDirection(moveDirection) * moveSpeed * Time.deltaTime);
+
+                if (Input.GetButtonDown("Jump"))
+                {
+                    body.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse); // Insatnt force impulse to the gameobjects ridiidboy using its mass
+                    isJumping = true;
+                    inFauxGravity = false;
+                    GetComponent<Rigidbody>().useGravity = true;
+                }
             }
+     }
 
-        }
-        
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
+     private void OnCollisionEnter(Collision collision)
+     {
         if (collision.gameObject.tag == "GravityIsland")
         {
             isGrounded = false;
@@ -97,7 +87,7 @@ public class JellyBallController : MonoBehaviour
             GetComponent<Rigidbody>().useGravity = false;
             myTransform = transform;
         }
-
+        
         if (collision.gameObject.tag == "Ground")
         {
             isGrounded = true;
@@ -106,20 +96,19 @@ public class JellyBallController : MonoBehaviour
             GetComponent<Rigidbody>().useGravity = true;
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         }
-    }
+     }
 
-    void OnTriggerEnter(Collider other)
-    {
-     
-        if (other.gameObject.tag == "DeathZone")
+        void OnTriggerEnter(Collider other)
         {
-            gameManager.health -= 1;
+            if (other.gameObject.tag == "DeathZone")
+            {
+                gameManager.health -= 1;
+            }
+
+            if (other.gameObject.tag == "Hot")
+            {
+               gameManager.health -= 1;
+            }
         }
 
-        if (other.gameObject.tag == "Hot")
-        {
-           gameManager.health -= 1;
-        }
-
     }
-}
