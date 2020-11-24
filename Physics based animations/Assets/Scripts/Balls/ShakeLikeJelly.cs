@@ -10,7 +10,7 @@ public class ShakeLikeJelly : MonoBehaviour
     public float damping = 0.75f;
 
     private Mesh OriginalMesh, MeshClone;
-    private MeshRenderer _renderer; // private 
+    private MeshRenderer _renderer;
     private JellyVertex[] jv;
     private Vector3[] vertexArray;
 

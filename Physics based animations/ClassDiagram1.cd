@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="FoamBallController" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAIgAAAAAgAAAAAAAAAQAIAcAIRAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Balls\FoamBallController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JellyBallController" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAgAAMiAEAAAAAAAAAACAgQAAAEAIQAAAAIAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Balls\JellyBallController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShakeLikeJelly" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAiAAAAAAAAIAAAAIEQAAIAAAAAAAAACABAA=</HashCode>
+      <FileName>Assets\Scripts\Balls\ShakeLikeJelly.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoneBallController" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAgEAAAIgAAABAwAAAAAAAAAQAAAMAIQAAAgAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Balls\StoneBallController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WoodBallController" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQAEAAAIAAAABAgAAAIAAAAAQAAAMAIRAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Balls\WoodBallController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FanSpinner" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Fan\FanSpinner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HoverTrigger" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAACAAAAAAIAAQAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Fan\HoverTrigger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpawnByRange" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACABAAAAAAAAAAAAAAAAAIAAQAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Fan\SpawnByRange.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ManageLava" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACABAAAAAAAAAAAAAAAAAIAAQAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Hot Area\ManageLava.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AddTime" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAABAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\AddTime.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChangeCheckPoint" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAACASAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ChangeCheckPoint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DestroyWhenFell" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\DestroyWhenFell.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FauxGravity" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FauxGravity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FollorBall" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAEABBAAAAAQAAAAAAAAAAAAwAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FollorBall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameManager" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAACCBGgAAgAAAAAAEAAAAAAAAAgAAAAEAAAAg=</HashCode>
+      <FileName>Assets\Scripts\GameManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GetSpawnLocation" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAQAAAAAAABQAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\GetSpawnLocation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReachEnd" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAEAgABAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ReachEnd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReSpawn" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ReSpawn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RotateView" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\RotateView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneSwitcher" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\SceneSwitcher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScrollSkyBox" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ScrollSkyBox.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TriggerNextArea" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAA=</HashCode>
+      <FileName>Assets\Scripts\TriggerNextArea.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
