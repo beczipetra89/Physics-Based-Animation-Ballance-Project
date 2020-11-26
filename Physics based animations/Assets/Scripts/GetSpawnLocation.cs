@@ -21,8 +21,8 @@ public class GetSpawnLocation : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             other.transform.position = spawnPoint.transform.position;
-            //player.transform.rotation = checkPoint.transform.rotation;
-
+            other.attachedRigidbody.velocity = Vector3.zero;
+            other.attachedRigidbody.angularVelocity = Vector3.zero;
         }
     }
 }

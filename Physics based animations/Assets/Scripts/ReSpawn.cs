@@ -12,7 +12,8 @@ public class ReSpawn : MonoBehaviour
 
    void OnTriggerEnter(Collider other)
     {
-        //player.transform.position = respawnPoint.transform.position;
         other.transform.position = respawnPoint.transform.position;
+        other.attachedRigidbody.velocity = Vector3.zero;
+        other.attachedRigidbody.angularVelocity = Vector3.zero;
     }
 }

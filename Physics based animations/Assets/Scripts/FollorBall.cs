@@ -43,7 +43,11 @@ public class FollorBall : MonoBehaviour
 
                 // Set the current ball's position to the previous ball's position that was just deactivated
                 balls[currentActive].transform.position = savedPosition;
-            }
+                // Break the activated ball's speed
+                balls[currentActive].GetComponent<Rigidbody>().velocity = Vector3.zero;
+                balls[currentActive].GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+
+        }
         }
 
 }

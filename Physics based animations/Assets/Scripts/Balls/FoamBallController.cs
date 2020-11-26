@@ -87,6 +87,13 @@ public class FoamBallController : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
+        if (other.gameObject.tag == "DeathZone")
+        {
+           // body.velocity = Vector3.zero;
+          //  body.angularVelocity = Vector3.zero;
+        }
+
+
         if (other.gameObject.tag == "Hot")
         {
             isHeated = false;
@@ -96,7 +103,7 @@ public class FoamBallController : MonoBehaviour
 
     IEnumerator Delay()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(2);
     }
 
 
